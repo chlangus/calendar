@@ -1,0 +1,23 @@
+body{
+  text-align: center;
+  width: 400px;
+  margin: auto;
+}
+
+div{
+  display: flex;
+  justify-content: space-around;
+}
+
+button{
+  border-style: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+li{
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
