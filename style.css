@@ -21,3 +21,11 @@ li{
   display: flex;
   justify-content: space-between;
 }
+
+table {
+  width: 400px;
+}
+
+td{
+    border: 1px solid;
+}

@@ -1,38 +1,37 @@
-// 1930년 1월 1일은 수요일
-// 윤년일때는 2월 29일까지
-//
 const monthElement = document.getElementById("month");
 const prevBtnELement = document.getElementById("<");
 const nextBtnElement = document.getElementById(">");
-const ulElement = document.getElementById("calendar");
+const tableElement = document.getElementById("calendar");
 
+const month = new Date().getMonth()+1;
+
+monthElement.textContent = month+'월';
+let cnt = 0;
 function prevMon(event) {
-  alert("미구현");
+  if(month + cnt <= 1){
+    console.log(cnt);
+  }else{
+    monthElement.textContent = month+ (--cnt)+'월';
+}
 }
 
 prevBtnELement.addEventListener("click", prevMon);
 
 function nextMon(event) {
-  alert("미구현");
+  monthElement.textContent = month + (++cnt) + '월';
 }
 
 nextBtnElement.addEventListener("click", nextMon);
 
-const newListElement = document.createAttribute("li");
-// const newSpanElement = document.createAttribute("span");
-// newSpanElement.textContent = 1;
-// newListElement.appendChild(newSpanElement);
-ulElement.appendChild(newListElement);
+let date = new Date().getMonth();
+console.log(date);
+// 오늘 날짜 알아서 달이랑 년 월 출력
+// 이전, 다음 버튼 누르면 똑같은 메커니즘으로 날짜 불러옴
 
-// let day = 1;
-// for(let i=0; i<7; i++){
-//   const newListElement = document.createAttribute('li');
-
-//   for(let j=0; j<6; j++){
-//     if(day === 32) break;
-//     const newSpanElement = document.createAttribute('span');
-//     newSpanElement.textContent = day++;
-//     newListElement.appendChild(newSpanElement);
-
-//   }
-// }
+for (let i = 0; i < 6; i++) {
+  const newRow = tableElement.insertRow();
+  for (let i = 0; i < 7; i++) {
+    const newCell1 = newRow.insertCell(i);
+    newCell1.textContent = i + 1;
+  }
+}
