@@ -4,6 +4,9 @@ body{
   margin: auto;
 }
 
+h2{
+  margin:0;
+}
 div{
   display: flex;
   justify-content: space-around;
